@@ -6,7 +6,7 @@
 #'
 #' @return the parameter's class
 #'
-#'
+#' @export
 #' @importFrom magrittr %>%
 #' @importFrom dplyr pull
 #' @importFrom dplyr filter

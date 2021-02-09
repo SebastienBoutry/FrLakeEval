@@ -6,6 +6,7 @@
 #'
 #' @return the threshold's vector
 #'
+#' @export
 #' @importFrom magrittr %>%
 #' @importFrom dplyr pull
 #' @importFrom dplyr filter
