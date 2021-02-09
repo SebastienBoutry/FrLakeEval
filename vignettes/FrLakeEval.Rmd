@@ -1,0 +1,58 @@
+---
+title: "FrLakeEval : The French lake evaluation according to he framework directive on water"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{comment-utiliser-mon-package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+**Le package FrLakeEval donne les outils répondant à la Directive Cadre Européenne sur l'Eau REF en terme d'évaluation de la qualité chimique des plans d'eau.**
+
+On y retrouve les fonctions nécessaires :
+
+-   pour déterminer des classes d'état du plan d'eau selon les valeurs pour les paramètres physico-chimiques suivants Phosphore total, Nitrates, Ammonium et Disque de secchi.
+-   pour déterminer l'atteinte du NQE selon les paramètres
+
+Cette évaluation se base sur le Guide technique relatif à l'évaluation de l'état des eaux de surface continentale (cours d'eau, canaux, plans d'eau) REF.
+
+Importation des packages nécessaires pour les exemples suivants :
+
+```{r setup}
+library(FrLakeEval)
+library(devtools)
+library(tidyverse)
+devtools::load_all()
+```
+
+Les mesures phisco-chimiques de prélèvement doivent se faire dans :
+
+- la zone euphotique (2.5 fois la transparence mesurer au disque de secchi)
+- au niveau de la zone de la plus grande profondeur du plan d'eau
+
+# État écologique des plans d'eau Paramètres physico-chimique généraux
+
+Deux vecteurs
+
+```{r first vector threshold}
+threshold_part_a(1350,4)
+```
+
+```{r second vector threshold}
+threshold_part_b(1350,4)
+```
+
+```{r threshold values}
+threshold_values(1350,4)
+```
+
+```{r chemical class}
+eval_chemical_class(45,1350,4)
+```

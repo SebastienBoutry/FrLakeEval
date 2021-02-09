@@ -1,0 +1,29 @@
+Package: FrLakeEval
+Title: The French lake evaluation according to he framework directive on water
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Sébastien",
+           family = "Boutry",
+           role = c("aut", "cre"),
+           email = "sebastien.boutry@inrae.fr",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Package qui permet de déterminer les classes d'état répondant aux recommandations de la Directive Cadre Européenne de l'eau.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+Depends: 
+    R (>= 2.10)
+Imports: 
+    ggplot2,
+    gt,
+    tidyverse,
+    magrittr,
+    dplyr,
+    tibble,
+    devtools
