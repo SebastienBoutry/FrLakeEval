@@ -17,19 +17,20 @@ eval_chemical_class <- function(value,code_sandre_parameter,Zmoy){
   if(!code_sandre_parameter %in% c(1350,1335,1332,1340)){
     stop("l'argument code_sandre_parameter est different de 1350,1335,1332,1340")
   }
-  if(!Zmoy>0){
-    stop("l'argument Zmoy n'est pas un numerique positif")
-  }
-  if(code_sandre_parameter==1332){
-    class_eval <- as.character(
-      cut(value,
-          breaks=threshold_values(code_sandre_parameter,Zmoy),
-          labels=c("TB","B","Mo","Me","Ma")[5:1]))
+  if((Zmoy>0 & !is.na(Zmoy))){
+    if(code_sandre_parameter==1332){
+      class_eval <- as.character(
+        cut(value,
+            breaks=threshold_values(code_sandre_parameter,Zmoy),
+            labels=c("TB","B","Mo","Me","Ma")[5:1]))
+    }else{
+      class_eval <- as.character(
+        cut(value,
+            breaks=threshold_values(code_sandre_parameter,Zmoy),
+            labels=c("TB","B","Mo","Me","Ma")))
+    }
   }else{
-    class_eval <- as.character(
-      cut(value,
-          breaks=threshold_values(code_sandre_parameter,Zmoy),
-          labels=c("TB","B","Mo","Me","Ma")))
+    class_eval <- NA
   }
   return(class_eval)
 }
